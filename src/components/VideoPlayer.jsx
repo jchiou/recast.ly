@@ -4,7 +4,7 @@ var VideoPlayer = () => (
       <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" allowFullScreen></iframe>
     </div>
     <div className="video-player-details">
-      <h3>Video Title</h3>
+      <h3>Video Title Well done!! </h3>
       <div>Video Description</div>
     </div>
   </div>
