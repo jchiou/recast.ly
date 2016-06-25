@@ -1,9 +1,9 @@
 var VideoList = (props) => {
   return ( 
-    <div className="video-list media">
+    <div  className="video-list media">
     {props.videos.map(video => {
       return (
-        <VideoListEntry video={video} />
+        <VideoListEntry callBack={props.callBack} video={video} />
       );
     }
     )}
