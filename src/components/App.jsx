@@ -2,7 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videoId: window.exampleVideoData[0]
+      videoId: window.exampleVideoData[0],
+      videos: window.exampleVideoData
     };
   }
 
@@ -22,7 +23,7 @@ class App extends React.Component {
         
         </div>
         <div className="col-md-5">
-          <VideoList callBack={this.onVideoEntryClick.bind(this)} videos={window.exampleVideoData} />
+          <VideoList callBack={this.onVideoEntryClick.bind(this)} videos={this.state.videos} />
         </div>
       </div>
     );
