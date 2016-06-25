@@ -12,7 +12,7 @@ class App extends React.Component {
       videoId: obj.props.video
 
     });
-  }
+  }   
 
   render() {
     return (
