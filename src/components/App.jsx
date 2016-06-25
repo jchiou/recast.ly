@@ -3,21 +3,45 @@ class App extends React.Component {
     super(props);
     this.state = {
       videoId: window.exampleVideoData[0],
-      videos: window.exampleVideoData
+      videos: []
     };
+    console.log(obj);
+   
+      // obj.query = document.getElementById('form').value;
+      //searchYouTube(obj, this.initialVideo.bind(this));
+    
+
   }
 
   onVideoEntryClick(obj) {
     this.setState({
       videoId: obj.props.video
-
     });
-  }   
+
+  }
+
+  initialVideo(data) {
+    this.setState({
+      videos: data.items
+    });
+  }
+
+  // getSearch() {
+  //   return document.getElementById('form').value;
+  // }
+  searchVideo(){
+    obj.query = document.getElementById('form').value;
+    searchYouTube(obj, this.initialVideo.bind(this));
+  }
+
+  componentDidMount() {
+    searchYouTube(obj, this.initialVideo.bind(this)); 
+  }
 
   render() {
     return (
       <div>
-        <Nav />
+        <Nav searchYouTube={this.searchVideo.bind(this)}/ >
         <div className="col-md-7">
           <VideoPlayer video={this.state.videoId} />
         
@@ -30,6 +54,7 @@ class App extends React.Component {
   }
 }
 
+searchYouTube(obj);
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
 window.App = App;

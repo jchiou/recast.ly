@@ -1,6 +1,6 @@
 var searchYouTube = (options, callback) => {
   // TODO
-  console.log('this call back is for test only', callback);
+  //console.log("options is", options);
   var obj = { part: 'snippet', 
               maxResults: options.max, 
               q: options.query, 
@@ -12,16 +12,14 @@ var searchYouTube = (options, callback) => {
     type: 'GET',
     data: obj,
     success: function (data) {
-      // this is for test
-      callback(data.items);
+      callback(data);
     }
   });
+
 };
 
 var obj = {};
 obj.key = window.YOUTUBE_API_KEY; 
-obj.query = 'cats'; 
+obj.query = 'dogs'; 
 obj.max = 5; 
-// searchYouTube(obj);
-
 window.searchYouTube = searchYouTube;

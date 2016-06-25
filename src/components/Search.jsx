@@ -1,6 +1,6 @@
-var Search = () => (
+var Search = (props) => (
   <div className="search-bar form-inline">
-    <input className="form-control" type="text" />
+    <input id="form" className="form-control" type="text" onKeyUp={function() { return props.searchYouTube(); }} />
     <button className="btn hidden-sm-down">
       <span className="glyphicon glyphicon-search"></span>
     </button>
