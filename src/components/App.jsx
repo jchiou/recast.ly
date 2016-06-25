@@ -5,12 +5,7 @@ class App extends React.Component {
       videoId: window.exampleVideoData[0],
       videos: []
     };
-    console.log(obj);
    
-      // obj.query = document.getElementById('form').value;
-      //searchYouTube(obj, this.initialVideo.bind(this));
-    
-
   }
 
   onVideoEntryClick(obj) {
@@ -26,12 +21,10 @@ class App extends React.Component {
     });
   }
 
-  // getSearch() {
-  //   return document.getElementById('form').value;
-  // }
-  searchVideo(){
+  searchVideo() {
     obj.query = document.getElementById('form').value;
-    searchYouTube(obj, this.initialVideo.bind(this));
+    
+    _.debounce(function(){ searchYouTube(obj, this.initialVideo.bind(this)); }.bind(this), 500)();
   }
 
   componentDidMount() {
