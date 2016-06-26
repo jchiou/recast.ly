@@ -1,6 +1,5 @@
 var searchYouTube = (options, callback) => {
-  // TODO
-  //console.log("options is", options);
+  // https://developers.google.com/youtube/v3/docs/search/list#try-it
   var obj = { part: 'snippet', 
               maxResults: options.max, 
               q: options.query, 
@@ -12,7 +11,7 @@ var searchYouTube = (options, callback) => {
     type: 'GET',
     data: obj,
     success: function (data) {
-      callback(data);
+      callback(data.items);
     }
   });
 

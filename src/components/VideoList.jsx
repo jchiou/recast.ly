@@ -3,6 +3,7 @@ var VideoList = (props) => {
     <div  className="video-list media">
     {props.videos.map(video => {
       return (
+        // pass callBack from App (which is onVideoEntryClick) to VideoListEntry
         <VideoListEntry callBack={props.callBack} video={video} />
       );
     }

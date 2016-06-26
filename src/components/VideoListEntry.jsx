@@ -1,13 +1,11 @@
 var VideoListEntry = (props) => {
  
   return (
-    <div onClick={function() { return props.callBack({props}); }} className="video-list-entry">
-      <div className="media-left media-middle">
-        
-         <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
-        
-        
-        
+    // on Click, wrap callback (onVideoEntryClick) passed down from VideoList in anonymous function for setting 
+    // behavior on click. Can't pass callback directly since it needs to be invoked
+    <div onClick={() => props.callBack({props}) } className="video-list-entry">
+      <div className="media-left media-middle">  
+      <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
       </div>
       <div className="media-body">
         <div className="video-list-entry-title">{props.video.snippet.title}</div>
